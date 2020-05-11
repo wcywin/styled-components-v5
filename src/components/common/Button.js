@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Button = styled.button`
 	color: white;
-	background: #f8049c;
+	background: ${p => p.secondary ? 'black' : '#f8049c'};
 	font-weight: bold;
 	padding: 8px;
 	border-radius: 4px;
@@ -16,12 +16,13 @@ const Button = styled.button`
 	cursor: pointer;
 	
 	&:hover {
-		box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+		box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 	}
 	
 	&:disabled {
 		background: #eee;
 		color: #666;
+		cursor: initial;
 	}
 `;
 
