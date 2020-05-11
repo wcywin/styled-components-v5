@@ -1,6 +1,9 @@
 import React from 'react';
 import { Button } from './common';
 import { createGlobalStyle } from 'styled-components'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Login from 'components/pages/Login'
+import Home from 'components/pages/Home'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -8,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     margin: 0;
     color: black;
-    font-family: 'Kaushan Script';
+    font-family: 'Kaushan Script', sans-serif;
   }
 `
 
@@ -16,18 +19,16 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <h1>
-        App
-      </h1>
-      <Button>
-        Primary Button
-      </Button>
-      <Button secondary>
-        Secondary Button
-      </Button>
-      <Button large>
-        Large Button
-      </Button>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </>
   );
 }
