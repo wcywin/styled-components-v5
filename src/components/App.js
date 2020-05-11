@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from './common';
+// import { Button } from './common';
 import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Login from 'components/pages/Login'
